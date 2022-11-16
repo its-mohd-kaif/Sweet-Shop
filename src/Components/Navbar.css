@@ -1,0 +1,55 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(to left, #fd9b9b, #ffc5c5);
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: large;
+}
+
+li a:hover {
+  background-color: #fedb01;
+  color: red;
+}
+.textNav {
+  margin-top: 1.3em;
+  margin-right: 3em;
+}
+.imgNav {
+  margin-left: 3em;
+  /* border: 1px solid black; */
+}
+.cartImg1{
+  width: 2em;
+}
+/* -------------------------------------- */
+
+@media only screen and (max-width: 650px) {
+  li {
+    float: none;
+  }
+  .imgNav {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+  }
+  .logoImg{
+    /* border: 1px solid black; */
+    /* padding-bottom: 1em; */
+    margin-right: 3em;
+  }
+}

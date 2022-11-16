@@ -1,0 +1,129 @@
+.CartDiv{
+    height: 100vh;
+  }
+  .tableDisplay{
+    margin-top: 3%;
+    width: 80%;
+    /* margin-left: 17em; */
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px #ffa41c;
+    padding: 3%;
+  }
+  
+  .rowTitle{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .rowCart{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .cartImg{
+    width: 5em;
+  }
+  .rowTitle{
+    margin-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: larger;
+    font-weight: bold;
+  }
+  .emptyBtn{
+    padding: 3px 23px ;
+    font-size: large;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+  .plus{
+    margin-right: 5px;
+    border: none;
+    background: transparent;
+    font-size: large;
+  }
+  .minus{
+    margin-left: 5px;
+    border: none;
+    background: transparent;
+    font-size: large;
+  }
+  .deleteBtn1{
+    border: none;
+    background: transparent;
+    font-size: large;
+  }
+  button{
+    cursor: pointer;
+  }
+  .deleteBtn{
+    padding: 3px 23px ;
+    font-size: large;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-top: 2%;
+  }
+  .deleteBtn2{
+    padding: 3px 23px ;
+    font-size: large;
+    background-color: yellowgreen;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+  .cartPriceDiv{
+    margin-left: 3%;
+  }
+  
+  .column1Cart{
+    width: 30%;
+    /* border: 1px solid black; */
+    margin-bottom: 2em;
+  }
+  .column2Cart,.column3Cart,.column4Cart,.column5Cart{
+    width: 30%;
+    /* border: 1px solid black; */
+    padding-top: 3em;
+  }
+  /* ----------------- */
+  @media only screen and (max-width: 800px) {
+    .tableDisplay {
+      margin-top: 3%;
+      width: 70%;
+      margin-left: 5em;
+      background-color: white;
+      color: black;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px 5px #ffa41c;
+      padding: 3%;
+      }
+  }
+  @media only screen and (max-width: 500px) {
+    .tableDisplay {
+      margin-top: 3%;
+      width: 60%;
+      margin-left: 2em;
+      background-color: white;
+      color: black;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px 5px #ffa41c;
+      padding: 3%;
+      overflow: hidden;
+      }
+      .grid-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
+      /* .column2Cart{
+        margin: 2%;
+      } */
+  }
+  
