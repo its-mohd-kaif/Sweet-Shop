@@ -2,6 +2,7 @@
 
 .SearchMainDiv{
   background: linear-gradient(to left, #5fbbb5, #43a49d);
+  /* border: 1px solid black; */
 }
 .topnav {
     overflow: hidden;
@@ -60,10 +61,6 @@
     float: left;
     margin-left: 5em;
   }
-  /* .search-container{
-    float: right;
-    margin-right: 5em;
-  } */
   .searchInput{
     width: 25em;
     height: 3em;

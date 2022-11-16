@@ -36,6 +36,13 @@ li a:hover {
 .cartImg1{
   width: 2em;
 }
+.btnCart{
+  background: transparent;
+  font-size: large;
+  border: none;
+  margin-top: 1.7em;
+  /* border: 1px solid black; */
+}
 /* -------------------------------------- */
 
 @media only screen and (max-width: 650px) {

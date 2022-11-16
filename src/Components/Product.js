@@ -1,19 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Product.css";
 import { products } from "./Data";
-import { displayContext, noteContext } from "../App";
+import { noteContext } from "../App";
 
 function Product() {
   const [type, setType] = useState("");
   const [order, setOrder] = useState("");
 
-  const [display, setDisplay] = useState([]);
+  const [display, setDisplay] = useState(products);
+
+  const [value, setValue] = useState("");
 
   let tempData = products;
-  useEffect(() => {
-    //Runs only on the first render
-    setDisplay(tempData);
-  }, []);
+  // useEffect(() => {
+  //   //Runs only on the first render
+  //   setDisplay([...tempData]);
+  // }, []);
 
   const typeHandler = (e) => {
     setType(e.target.value);
@@ -33,17 +35,37 @@ function Product() {
       tempData.sort(function (a, b) {
         return b.price - a.price;
       });
+    }else if (v1 === "Ascending" && v2 === "Rating") {
+      tempData.sort(function (a, b) {
+        return a.rating.length - b.rating.length;
+      });
+    } else if (v1 === "Descending" && v2 === "Rating") {
+      tempData.sort(function (a, b) {
+        return b.rating.length - a.rating.length;
+      });
     }
-    // user.display.push(tempData);
-    //     user.setDisplay([...user.display]);
     console.log("Temp", tempData);
     setDisplay([...tempData]);
   };
   // --------------------
-  let user = useContext(noteContext);
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+  const searchHandler = (e) => {
+    e.preventDefault()
+    let tempValue=value.toLowerCase();
+    console.log(tempValue);
+    console.log(display[0].name)
+    for (let i = 0; i < display.length; i++) {
+      let tempValue2=display[i].name.toLowerCase();
+      if(tempValue2.match(tempValue)){
+        setDisplay([display[i]])
+      }
+    }
+  }
 
-  let items = useContext(displayContext);
-  console.log("Items", items.display[0]);
+  // -----------------------
+  let user = useContext(noteContext);
 
   const addToCart = (e) => {
     let productId = e;
@@ -71,32 +93,34 @@ function Product() {
             <select onChange={typeHandler} id="OS">
               <option value="">--Select--</option>
               <option value="Price">Price</option>
+              <option value="Rating">Rating</option>
             </select>
             <select onChange={orderHandler} id="Brand">
               <option value="">--Select Order--</option>
-              <option value="Ascending">Ascending</option>
-              <option value="Descending">Descending</option>
+              <option value="Ascending">Low To High</option>
+              <option value="Descending">High To Low</option>
             </select>
             <button onClick={filterHandler} className="searchBtn" id="filter">
               Filter
             </button>
           </div>
           <div className="search-container filterDiv">
-            <form action="/action_page.php">
+            <form action="/">
               <input
                 className="searchInput"
                 type="text"
                 placeholder="Search.."
                 name="search"
+                onChange={onChange}
               />
-              <button className="searchBtn" type="submit">
+              <button onClick={searchHandler} className="searchBtn" type="submit">
                 <i className="fa fa-search"></i>
               </button>
             </form>
           </div>
         </center>
       </div>
-      {products.map((t) => (
+      {display.map((t) => (
         <div id="main">
           <div id="products1">
             <div className="product1">
@@ -105,6 +129,10 @@ function Product() {
                 <a href="/"> {t.name}</a>
               </h3>
               <span style={{ color: "red" }}>Price {t.price} ₹</span>
+              <center>
+              <p style={{textAlign:"center"}}>{t.rating}</p>
+              </center>
+              
               <a
                 onClick={() => {
                   addToCart(t.id);

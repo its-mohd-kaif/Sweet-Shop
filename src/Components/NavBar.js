@@ -2,15 +2,28 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import logo from "../images/logo.png";
 import cart from "../images/cart.png";
-import SearchBar from "./SearchBar";
 import Carousel from "./Carousel";
 import Product from "./Product";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { noteContext } from "../App";
 // import Link from React-router-dom
 function NavBar() {
-  let user=useContext(noteContext)
+  let user = useContext(noteContext);
+  let navigate = useNavigate();
+  const cartHandler = (e) => {
+    e.preventDefault();
+    var users = "";
+    users = JSON.parse(localStorage.getItem("username"));
+    console.log(Object.keys(users).length);
+    console.log("USERS1", users.length);
+    if (Object.keys(users).length===0) {
+      alert("Please Sign Up");
+      navigate("/Signup");
+    } else {
+      navigate("/Cart");
+    }
+  };
   return (
     <div>
       <ul>
@@ -42,12 +55,12 @@ function NavBar() {
           </a>
         </li>
         <li>
-            <Link className="textNav" to={"/Cart"}>
-              <img className="cartImg1 cart" src={cart} alt="" /> {user.data.length}
-            </Link>
+          <button onClick={cartHandler} className="textNav btnCart">
+            <img className="cartImg1 cart" src={cart} alt="" />{" "}
+            {user.data.length}
+          </button>
         </li>
       </ul>
-      {/* <SearchBar /> */}
       <Carousel />
       <Product />
       <Footer />

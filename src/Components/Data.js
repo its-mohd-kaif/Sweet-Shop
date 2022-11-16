@@ -13,6 +13,7 @@ export var products = [
       image: img1,
       price: 400,
       quantity: 1,
+      rating:"⭐⭐⭐"
     },
     {
       id: 102,
@@ -20,6 +21,7 @@ export var products = [
       image: img2,
       price: 550,
       quantity: 1,
+      rating:"⭐⭐"
     },
     {
       id: 103,
@@ -27,6 +29,7 @@ export var products = [
       image: img3,
       price: 1100,
       quantity: 1,
+      rating:"⭐⭐⭐⭐⭐"
     },
     {
       id: 104,
@@ -34,6 +37,7 @@ export var products = [
       image: img4,
       price: 750,
       quantity: 1,
+      rating:"⭐⭐⭐"
     },
     {
       id: 105,
@@ -41,6 +45,7 @@ export var products = [
       image: img5,
       price: 680,
       quantity: 1,
+      rating:"⭐⭐⭐⭐"
     },
     {
       id: 106,
@@ -48,6 +53,7 @@ export var products = [
       image: img6,
       price: 500,
       quantity: 1,
+      rating:"⭐⭐"
     },
     {
       id: 107,
@@ -55,6 +61,7 @@ export var products = [
       image: img7,
       price: 900,
       quantity: 1,
+      rating:"⭐⭐⭐"
     },
     {
       id: 108,
@@ -62,6 +69,7 @@ export var products = [
       image: img8,
       price: 650,
       quantity: 1,
+      rating:"⭐⭐⭐⭐"
     },
   ];
   
