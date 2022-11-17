@@ -53,13 +53,18 @@ function Product() {
   // Search Handler Function
   const searchHandler = (e) => {
     e.preventDefault();
-    let tempValue = value.toLowerCase();
-    console.log(tempValue);
-    console.log(display[0].name);
-    for (let i = 0; i < display.length; i++) {
-      let tempValue2 = display[i].name.toLowerCase();
-      if (tempValue2.match(tempValue)) {
-        setDisplay([display[i]]);
+    if (value === "") {
+      alert("Please Write Name Of Sweets...");
+      document.getElementById("search").focus();
+    } else {
+      let tempValue = value.toLowerCase();
+      console.log(tempValue);
+      console.log(display[0].name);
+      for (let i = 0; i < display.length; i++) {
+        let tempValue2 = display[i].name.toLowerCase();
+        if (tempValue2.match(tempValue)) {
+          setDisplay([display[i]]);
+        }
       }
     }
   };
@@ -91,7 +96,7 @@ function Product() {
         <center>
           <div className="filterDiv filter">
             <select onChange={typeHandler} id="OS">
-              <option value="">--Select--</option>
+              <option value="">--Select Type--</option>
               <option value="Price">Price</option>
               <option value="Rating">Rating</option>
             </select>
@@ -112,6 +117,7 @@ function Product() {
                 placeholder="Search.."
                 name="search"
                 onChange={onChange}
+                id="search"
               />
               <button
                 onClick={searchHandler}
