@@ -98,6 +98,7 @@ function CartPage() {
                 </button>
               </div>
             </div>
+            {/* Display using map */}
             {user.data.map((ele) => (
               <div className="rowCart grid-container">
                 <div className="column1Cart grid-item">
@@ -107,7 +108,7 @@ function CartPage() {
                   <span className="nameProduct">{ele.name}</span>
                 </div>
                 <div className="column5Cart grid-item">
-                  <span>{ele.price} $</span>
+                  <span>Price ₹ {ele.price}</span>
                 </div>
                 <div className="column3Cart grid-item">
                   <button
@@ -143,7 +144,7 @@ function CartPage() {
           </div>
           <div className="cartPriceDiv">
             <div>
-              <h2>Total Price : {price} $</h2>
+              <h2>Total Price : ₹ {price}</h2>
             </div>
             <button className="deleteBtn" onClick={checkOutBtn}>
               Checkout

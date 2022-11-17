@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital@1&display=swap");
+.aboutDiv {
+  box-shadow: 0 4px 8px 0 #fd9b9b;
+  transition: 0.3s;
+  width: 60%;
+  padding: 3%;
+  margin-top: 7%;
+  font-family: "Cedarville Cursive", cursive;
+
+  font-family: "Playfair Display", serif;
+}
+.aboutDiv:hover {
+  box-shadow: 0 8px 16px 0 #fd9b9b;
+}
+.paraDiv {
+  margin-top: 2em;
+  font-family: "Cedarville Cursive", cursive;
+  font-family: "Playfair Display", serif;
+  font-size: large;
+}

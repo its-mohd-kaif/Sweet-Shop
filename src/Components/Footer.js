@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "./Footer.css";
 import logo from "../images/logo.png";
 function Footer() {
+  // States for footer contact input values
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  // Email Handler Function
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
+  // Message Handler Function
   const messageHandler = (e) => {
     setMessage(e.target.value);
   };
+  // Button Handler
   const buttonHandler = (e) => {
     e.preventDefault();
     if (email === "") {

@@ -2,64 +2,88 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import logo from "../images/logo.png";
 import cart from "../images/cart.png";
+import text from "../images/text.png";
 import Carousel from "./Carousel";
 import Product from "./Product";
 import Footer from "./Footer";
-import { Link, useNavigate } from "react-router-dom";
-import { noteContext } from "../App";
-// import Link from React-router-dom
+import { useNavigate } from "react-router-dom";
+import { noteContext, textContext } from "../App";
 function NavBar() {
   let user = useContext(noteContext);
+  let texts = useContext(textContext);
+  // Import context values
   let navigate = useNavigate();
+  // Cart Handler Function
   const cartHandler = (e) => {
     e.preventDefault();
-    var users = "";
-    users = JSON.parse(localStorage.getItem("username"));
-    console.log(Object.keys(users).length);
-    console.log("USERS1", users.length);
-    if (Object.keys(users).length===0) {
-      alert("Please Sign Up");
+    // When new user try to open cart page then user have to firstly
+    // Create accout(Signup) after user can go on CART page
+    let users = JSON.parse(localStorage.getItem("username"));
+    if (users === null) {
+      alert("Please Create Your Account !!!");
       navigate("/Signup");
     } else {
       navigate("/Cart");
     }
   };
+  // Function for  increase and decrease Font Symbol
+  const textHandler = (e) => {
+    e.preventDefault();
+    if (texts.text === "initial") {
+      texts.setText("big");
+    } else if (texts.text === "big") {
+      texts.setText("initial");
+    }
+  };
   return (
-    <div>
+    <div className="navbarDiv">
       <ul>
         <li className="imgNav">
-          <a class="active" href="#home">
+          <a class="active" href="/">
             <img className="logoImg" src={logo} alt="" />
           </a>
         </li>
         <li>
-          <a className="textNav" href="#news">
+          <a className="textNav" href="/About">
             About
           </a>
         </li>
         <li>
-          <a className="textNav" href="#contact">
-            Products
+          <a className="textNav" href="/Contact">
+            Contact
           </a>
         </li>
         <li>
-          {/* <Link to="Signup"> */}
           <a className="textNav" href="Signup">
             Signup
           </a>
-          {/* </Link> */}
         </li>
         <li>
           <a className="textNav" href="Signin">
             Login
           </a>
         </li>
-        <li>
-          <button onClick={cartHandler} className="textNav btnCart">
-            <img className="cartImg1 cart" src={cart} alt="" />{" "}
-            {user.data.length}
-          </button>
-        </li>
+        <center>
+          <li>
+            <button onClick={cartHandler} className="textNav btnCart">
+              <img className="cartImg1 cart" src={cart} alt="" />{" "}
+              <span
+                style={{
+                  color: "white",
+                  backgroundColor: "black",
+                  borderRadius: "15px",
+                }}
+              >
+                {user.data.length}
+              </span>
+            </button>
+          </li>
+          <li>
+            <button onClick={textHandler} className="textNav btnCart">
+              <img className="textImg" src={text} alt="" />
+            </button>
+          </li>
+        </center>
       </ul>
       <Carousel />
       <Product />

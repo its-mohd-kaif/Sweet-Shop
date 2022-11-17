@@ -1,16 +1,18 @@
+.navbarDiv {
+  position: relative;
+  top: 0;
+}
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background: linear-gradient(to left, #fd9b9b, #ffc5c5);
-
 }
 
 li {
   float: left;
 }
-
 li a {
   display: block;
   color: black;
@@ -20,7 +22,6 @@ li a {
   border-radius: 15px;
   font-size: large;
 }
-
 li a:hover {
   background-color: #fedb01;
   color: red;
@@ -31,17 +32,19 @@ li a:hover {
 }
 .imgNav {
   margin-left: 3em;
-  /* border: 1px solid black; */
 }
-.cartImg1{
+.cartImg1 {
   width: 2em;
 }
-.btnCart{
+.btnCart {
   background: transparent;
   font-size: large;
   border: none;
   margin-top: 1.7em;
-  /* border: 1px solid black; */
+  text-align: center;
+}
+.textImg {
+  width: 2.5em;
 }
 /* -------------------------------------- */
 
@@ -52,11 +55,8 @@ li a:hover {
   .imgNav {
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
   }
-  .logoImg{
-    /* border: 1px solid black; */
-    /* padding-bottom: 1em; */
+  .logoImg {
     margin-right: 3em;
   }
 }

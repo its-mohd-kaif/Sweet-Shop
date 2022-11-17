@@ -1,14 +1,10 @@
-
-
 .SearchMainDiv{
   background: linear-gradient(to left, #5fbbb5, #43a49d);
-  /* border: 1px solid black; */
 }
 .topnav {
     overflow: hidden;
     background-color: #e9e9e9;
-  }
-  
+  } 
   .topnav a {
     float: left;
     display: block;
@@ -17,13 +13,11 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
+  } 
   .topnav a:hover {
     background-color: #ddd;
     color: black;
   }
-  
   .topnav a.active {
     background-color: #2196F3;
     color: white;
@@ -118,7 +112,6 @@
   }
   
   #logo {
-    /* font-size: 32px; */
     margin-bottom: 50px;
   }
   
@@ -143,7 +136,6 @@
   }
   
   #menu li a {
-    /* font-size: 16px; */
     font-weight: bold;
   }
   
@@ -157,13 +149,7 @@
     margin: 0 auto;
   }
   
-  /*
-   * Home Page
-   */
-  
   #main p {
-    /* font-size: 15px; */
-    /* display: inline-block; */
     word-spacing: 2px;
     margin-bottom: 10px;
     text-align: justify;
@@ -187,7 +173,6 @@
   
   #products1 .product1 .title1 a {
     text-decoration: none;
-    /* font-size: 16px; */
     font-weight: light;
     color: #000000;
   }
@@ -199,7 +184,6 @@
     padding: 8px 14px 10px;
     border: 1px solid #ffc5c5;
     cursor: pointer;
-    /* font-size: 1.2em; */
     display: block;
     max-width: 60%;
     margin: 20px auto 0px;
@@ -232,7 +216,6 @@
   #contact-form .submit input[type="submit"] {
     width: 100px;
     display: inline;
-    /* font-size: 1em; */
   }
   
   #contact-form label,
@@ -264,4 +247,12 @@
   }
   .productImg{
     max-width: 50%;
+  }
+
+  /* ---------- */
+  .big{
+    font-size: 22px;
+  }
+  .initial{
+    font-size: 15px;
   }
