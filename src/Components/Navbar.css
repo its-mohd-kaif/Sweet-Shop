@@ -17,14 +17,14 @@ li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 10px;
   text-decoration: none;
   border-radius: 15px;
   font-size: large;
 }
 li a:hover {
-  background-color: #fedb01;
   color: red;
+  text-decoration: none;
 }
 .textNav {
   margin-top: 1.3em;

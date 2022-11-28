@@ -58,8 +58,6 @@ function Product() {
       document.getElementById("search").focus();
     } else {
       let tempValue = value.toLowerCase();
-      console.log(tempValue);
-      console.log(display[0].name);
       for (let i = 0; i < display.length; i++) {
         let tempValue2 = display[i].name.toLowerCase();
         if (tempValue2.match(tempValue)) {
@@ -75,6 +73,8 @@ function Product() {
   const addToCart = (e) => {
     let productId = e;
     productId = Number(productId);
+
+    alert("Product Added Successfully")
 
     for (let i = 0; i < products.length; i++) {
       if (products[i].id === productId) {

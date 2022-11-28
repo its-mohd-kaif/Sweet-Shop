@@ -82,6 +82,12 @@ function CartPage() {
     user.setData([...user.data]);
     navigate("/");
   };
+    // Signout Button Function
+    const signOutBtn = () => {
+      localStorage.removeItem("username");
+      alert("Signout Successfully");
+      navigate("/");
+    };
   return (
     <center>
       <div className="CartDiv">
@@ -154,6 +160,9 @@ function CartPage() {
             <Link to="/">
               <button className="deleteBtn2">Home Page</button>
             </Link>
+            <button style={{marginLeft:"2%"}} className="deleteBtn2" onClick={signOutBtn}>
+              Signout
+            </button>
           </div>
         </div>
       </div>

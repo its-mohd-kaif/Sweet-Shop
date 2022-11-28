@@ -4,7 +4,7 @@
   transition: 0.3s;
   width: 60%;
   padding: 3%;
-  margin-top: 7%;
+  margin-top: 3%;
   font-family: "Cedarville Cursive", cursive;
 
   font-family: "Playfair Display", serif;
@@ -17,4 +17,13 @@
   font-family: "Cedarville Cursive", cursive;
   font-family: "Playfair Display", serif;
   font-size: large;
+}
+.homeBtn{
+  margin-top: 1%;
+  background-color: #fd9b9b;
+  color: white;
+  padding: 10px 20px;
+  font-size: large;
+  border: none;
+  border-radius: 12px;
 }

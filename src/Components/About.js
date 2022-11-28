@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./About.css";
 function About() {
+
   return (
     <div>
       {/* About us Container */}
       <center>
+        <div>
+          <Link to={"/"}>
+            <button className="homeBtn">Home Page</button>
+          </Link>
+        </div>
         <div className="aboutDiv">
           <h1>About Us</h1>
           <p className="paraDiv">
